@@ -1,0 +1,38 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    border-bottom: 1px solid black;
+    padding: 1%;
+}
+
+nav li {
+    list-style: none;
+}
+
+.logo{
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logo a {
+    text-decoration: none;
+    color: red;
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+    width: 25%;
+}
+
+.links a{
+    color: black;
+    text-decoration: none;
+}
+
+.links a:hover{
+    text-decoration: underline;
+}
