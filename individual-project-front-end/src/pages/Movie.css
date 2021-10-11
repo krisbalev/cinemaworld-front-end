@@ -1,0 +1,16 @@
+.movie-page{
+    display: flex;
+}
+
+.movie-page-photo{
+    border: 1px solid black;
+    width: 33%;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 1%;
+    height: 300px;
+}
+
+.movie-page-info{
+    margin: 1%;
+}

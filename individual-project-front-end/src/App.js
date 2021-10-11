@@ -11,8 +11,8 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/movies/:id' exact component={Movie}/>
+          <Route exact path='/' exact component={Home} />
+          <Route exact path='/movies/:id' exact component={Movie}/>
         </Switch>
       </Router>
     </div>
