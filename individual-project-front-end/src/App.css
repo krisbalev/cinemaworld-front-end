@@ -1,1 +1,10 @@
+body{
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
 
+.spacer{
+    width: 100%;
+    height: 45px;
+}

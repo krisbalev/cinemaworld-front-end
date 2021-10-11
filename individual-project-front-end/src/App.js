@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
+        <div className="spacer"></div>
         <Switch>
           <Route exact path='/' exact component={Home} />
           <Route exact path='/movies/:id' exact component={Movie}/>

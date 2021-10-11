@@ -20,11 +20,16 @@ function Movie() {
 
     return (
         <div className="movie-page">
-            <div className="movie-page-photo">Movie photo</div>
-            <div className="movie-page-info">
-                <h1>{movie.title}</h1>
-                <h3>Release date: {movie.releaseDate}</h3>
-                <p>{movie.description}</p>
+            <div className="movie-page-container">
+                <div className="movie-page-photo">Movie photo</div>
+                <div className="movie-page-info">
+                    <h1>{movie.title}</h1>
+                    <h3>Release date: {movie.releaseDate}</h3>
+                    <p>{movie.description}</p>
+                </div>
+            </div>
+            <div className="movie-page-cinemas-container">You can watch {movie.title} in:
+                <div className="movie-page-cinema"></div>
             </div>
         </div>
     )
