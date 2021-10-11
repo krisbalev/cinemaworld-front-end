@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router
 
 import Navbar from './components/Navbar';
 import Home from "./pages/Home";
+import Movie from './pages/Movie';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path='/' exact component={Home} />
+          <Route path='/movies/:id' exact component={Movie}/>
         </Switch>
       </Router>
     </div>

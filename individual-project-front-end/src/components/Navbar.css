@@ -5,6 +5,7 @@ nav{
     min-height: 8vh;
     border-bottom: 1px solid black;
     padding: 1%;
+    
 }
 
 nav li {
@@ -25,7 +26,6 @@ nav li {
 .links{
     display: flex;
     justify-content: space-around;
-    width: 25%;
 }
 
 .links a{
