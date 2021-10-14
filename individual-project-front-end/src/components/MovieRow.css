@@ -2,34 +2,8 @@
     display: flex;
     width: 80%;
     margin: 0 10%;
-    background-color: white;
     margin-bottom: 20px;
     margin-top: 20px;
     /* border: 1px solid black; */
   
-}
-
-.movie-card{
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-    width: 30%;
-    text-align: center;
-    margin: 1%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border: 1px solid black;
-    cursor: pointer;
-    background-color: white;    
-}
-
-.movie-card:hover{
-    box-shadow: 0px 2px 8px 0px black;
-    transition: 0.2s;
-}
-
-.movie-photo{
-    border: 1px solid black;
 }
