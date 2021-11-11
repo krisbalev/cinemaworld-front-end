@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router
 import Navbar from './components/Navbar';
 import Home from "./pages/Home";
 import Movie from './pages/Movie';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Switch>
           <Route exact path='/' exact component={Home} />
           <Route exact path='/movies/:id' exact component={Movie}/>
+          <Route exact path='/login' exact component={Login}/>
+          <Route exact path='/register' exact component={Register}/>
         </Switch>
       </Router>
     </div>
