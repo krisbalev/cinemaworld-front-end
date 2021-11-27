@@ -51,6 +51,7 @@
     cursor: pointer;
     margin: 15px 0;
     border-radius: 5px;
+    transition: 0.5s;
 }
 
 .btn:hover{
@@ -67,6 +68,7 @@
 .btn-reg a {
     color:red;
     text-decoration: none;
+    transition: 0.5s;
 }
 
 .btn-reg a:hover {
