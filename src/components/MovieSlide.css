@@ -1,0 +1,38 @@
+.movie-slide {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10vh;
+}
+
+.movie-slide-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 5%;
+    opacity: 1;
+}
+
+.movie-slide-info {
+    position: absolute;
+    margin-bottom: 22.7vh;
+    bottom: 0px;
+    background: linear-gradient(to bottom, transparent,rgb(20, 20, 20));
+    width: 100%;
+    text-align: center;
+}
+
+.movie-slide-info h1{
+    color: white;
+    padding: 1% 10%;
+
+}
+
+.movie-slide-info p {
+    color: white;
+}
+
+.slide-player{
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+}

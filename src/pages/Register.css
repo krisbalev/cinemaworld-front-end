@@ -1,0 +1,34 @@
+.register-container{
+    position: absolute;
+    /* border: 1px solid black; */
+    width: 80%;
+    margin-left: 8%;
+    margin-top: 3%;
+    background-color: rgb(55, 55, 55);
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.register-container h1{
+    text-align: center;
+    font-style: italic;
+    color: red;
+    font-size: 36px;
+}
+
+.prefix p{
+    font-size: 18px;
+
+}
+
+.reg-container-1{
+    float: left;
+    width: 42.5%;
+    margin-left: 5%;
+}
+
+.reg-container-2{
+    float: left;
+    margin-left: 5%;
+    width: 42.5%;
+}
