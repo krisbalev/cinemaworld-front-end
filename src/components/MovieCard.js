@@ -10,7 +10,7 @@ const MovieCard = props => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/movies/photo/${props.movie.id}`,{responseType: 'blob'}, { headers: authHeader() })
+            .get(`http://localhost:8080/movies/poster/${props.movie.id}`,{responseType: 'blob'}, { headers: authHeader() })
             .then(res => {
                 // console.log(res.data);
                setMoviePicturePath(URL.createObjectURL(res.data))

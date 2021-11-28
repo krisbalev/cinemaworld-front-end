@@ -7,5 +7,18 @@
     /* border: 1px solid black; */
     flex-wrap: wrap;    
     flex-direction: row;
-  
+}
+
+.movie-row{
+    padding-top: 7vh;
+}
+
+.movie-row-header{
+    width: 80%;
+    margin: 0 10%;
+    border-bottom: 1px solid red;
+}
+
+.movie-row-header h1{
+    text-align: center;
 }

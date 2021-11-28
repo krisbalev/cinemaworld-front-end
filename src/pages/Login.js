@@ -28,6 +28,7 @@ const Login = props => {
             setLoginErrorMessage("Please fill in all the required fields.");
             return;
         } else {
+            setLoginErrorMessage("");
             props.login(username, password);
         }
     };
