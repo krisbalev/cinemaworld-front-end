@@ -1,22 +1,49 @@
 .movie-page-container{
-    display: flex;
-    border-bottom: 1px solid white;
-    padding: 1%;
     width: 100%;
+    height: 70vh;
 }
 
 .movie-page-photo{
-    border: 1px solid white;
-    width: 33%;
-    text-align: center;
+    height: 60vh;
+    width: 40vh;
     margin-left: 5%;
-    height: 300px;
+}
+
+.movie-page-photo img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .movie-page-info{
-    margin: 1%;
+    margin-left: 5%;
+    width: 65%;
 }
 
 .movie-page-cinemas-container{
     text-align: center;
+}
+
+.movie-page-background-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.movie-page-box{
+    display: flex;
+    position: absolute;
+    top: 10vh;
+    width: 80%;
+}
+
+.trailer-button{
+    border-radius: 20px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 2% 5%;
+    font-size: 16px;
 }

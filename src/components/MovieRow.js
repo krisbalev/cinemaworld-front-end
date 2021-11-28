@@ -22,18 +22,18 @@ function MovieRow() {
         }
         getData();
     }, []);
-    return(
-        <div className="movie-row">
-            <div>
-                {movies && (
-                    <div className="movies">
+    return (
+        <div className="movie-row" id="movies">
+            <div className="movie-row-header"><h1>List of movies</h1></div>
+            {movies && (
+                <div className="movies">
 
-                        {movies.map((movie) => (
-                            <MovieCard movie={movie} key={movie.id}/>
-                        ))}
-                    </div>
-                )}
-            </div>
+                    {movies.map((movie) => (
+                        <MovieCard movie={movie} key={movie.id} />
+                    ))}
+                </div>
+            )}
+
         </div>
     )
 }

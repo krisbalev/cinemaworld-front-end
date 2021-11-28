@@ -69,7 +69,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar logout={logout} />
-        <div className="spacer"></div>
+        <div className="spacer" id="home"></div>
         <Switch>
           <Route exact path='/' exact component={Home} />
           <Route exact path='/movies/:id' exact component={Movie} />
