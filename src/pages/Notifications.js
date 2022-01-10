@@ -7,7 +7,7 @@ const ENDPOINT = "http://localhost:8080/ws";
 const Notifications = () => {
   const [stompClient, setStompClient] = useState(null);
   const [msgToSend, setSendMessage] = useState("Enter your message here!");
-  const [msgReceived, setReceivedMessage] = useState();
+  const [msgReceived, setReceivedMessage] = useState(['']);
 
 
   useEffect(() => {
@@ -75,14 +75,11 @@ const Notifications = () => {
   }
   
     return (
-        <div>
-           <button onClick={connect}>Connect</button>
-          <button  onClick={disconnect}>Disconnect</button>
-          <br/>
+        <div className='chat-room-container'>
+          <h1>Disscution chat room(in development)</h1>
+          <textarea value={msgReceived} /> <br/>
           <input onChange={(event) => setSendMessage(event.target.value)}/>
-          <button  onClick={sendMessage}>Send Message</button>
-          <br/>
-          <textarea value={msgReceived} />
+          <button onClick={sendMessage}>Send Message</button>
         </div>
     )
 }
