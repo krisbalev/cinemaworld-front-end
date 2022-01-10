@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
 import MovieData from '../components/MovieData';
+import CinemaRow from '../components/CinemaRow';
 
 function Movie() {
     const [movie, setMovie] = useState({});
@@ -22,9 +23,7 @@ function Movie() {
     return (
         <div className="movie-page">
             <MovieData movie={movie}/>
-            <div className="movie-page-cinemas-container">You can watch {movie.title} in:
-                <div className="movie-page-cinema"></div>
-            </div>
+            <CinemaRow movie={movie}/>
         </div>
     )
 }

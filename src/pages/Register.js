@@ -129,7 +129,7 @@ const Register = ({ register }) => {
                 <h1>Register</h1>
                 <div class="reg-container-1">
                     <div class="textbox">
-                        <input type="text" placeholder="First Name" id="first-name" name="first-name" onChange={handleFirstNameChange}/><br />
+                        <input type="text" placeholder="First Name" id="first-name" name="first-name" onChange={handleFirstNameChange} /><br />
                     </div>
                     <div class="textbox">
                         <input type="text" placeholder="Last Name" id="last-name" name="last-name" onChange={handleLastNameChange} /><br />
@@ -143,13 +143,13 @@ const Register = ({ register }) => {
                         <input type="text" placeholder="E-mail address" id="email" name="email" onChange={handleEmailChange} /><br />
                     </div>
                     <div class="textbox">
-                        <input type="text" placeholder="Username" id="username" name="username" onChange={handleUsernameChange}  /><br />
+                        <input type="text" placeholder="Username" id="username" name="username" onChange={handleUsernameChange} /><br />
                     </div>
                     <div class="textbox">
-                        <input type="password" placeholder="Password" id="password" name="password"onChange={handlePasswordChange} /><br />
+                        <input type="password" placeholder="Password" id="password" name="password" onChange={handlePasswordChange} /><br />
                     </div>
                     <div class="textbox">
-                        <input type="password" placeholder="Confirm Password" id="confirm-password" name="confirm-password" onChange={handleConfirmPasswordChange}/><br />
+                        <input type="password" placeholder="Confirm Password" id="confirm-password" name="confirm-password" onChange={handleConfirmPasswordChange} /><br />
                     </div>
                 </div>
                 <input class="btn" type="submit" value="Confirm" id="btnSubmit" />

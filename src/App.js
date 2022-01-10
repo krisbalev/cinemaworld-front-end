@@ -2,17 +2,20 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import axios from 'axios';
-
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Home from "./pages/Home";
 import Movie from './pages/Movie';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
+import ReservationPage from './pages/ReservationPage';
+import Notifications from './pages/Notifications';
 
 function App() {
-
+  
   const history = createBrowserHistory();
+
 
   const register = (username, password, email, firstName, lastName) => {
     axios
@@ -40,24 +43,7 @@ function App() {
       });
   };
 
-  const login = (username, password) => {
-    axios
-        .post("http://localhost:8080/login", { username, password })
-        .then((res) => {
-            if (res.data.error) {
-                console.log(res.data);
-                alert("Invalid credentials");
-            } else {
-                console.log(res.data);
 
-                localStorage.setItem('accessToken', JSON.stringify(res.data));
-
-                history.push("/")
-                window.location.reload();
-            }
-        });
-
-};
 
   const logout = () => {
     localStorage.removeItem('accessToken');
@@ -77,11 +63,13 @@ function App() {
             localStorage.getItem('accessToken') ?
               <>
                 <Route exact path='/profile' exact component={Profile} />
+                <Route exact path='/reserve' exact component={ReservationPage}/>
+                <Route exact path='/notifications' exact component={Notifications}/>
               </>
               :
               <>
                 <Route path="/register"> <Register register={register} /> </Route>
-                <Route path="/login"> <Login login={login} /> </Route>
+                <Route path="/login"> <Login /> </Route>
               </>
           }
         </Switch>

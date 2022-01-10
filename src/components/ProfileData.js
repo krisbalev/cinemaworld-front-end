@@ -47,7 +47,7 @@ function ProfileData() {
         </div>
 
         <div className="profile-edit-button">
-          <Link to="/profile-settings" className="edit-button">Edit</Link>
+        <Link to="/profile" className="edit-button">Reservation History</Link> | <Link to="/settings" className="edit-button">Settings</Link>
         </div>
       </div>
   );

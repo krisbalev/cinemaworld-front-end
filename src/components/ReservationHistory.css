@@ -1,0 +1,20 @@
+.reservation-box-headers{
+    color: red;
+    width: 100%;
+    font-weight: bold;
+}
+
+.amount{
+    text-align: right;
+}
+
+.reservation-container{
+    width: 120vh;
+    padding: 40px;
+    margin-top: 10px;
+    height: 70vh;
+}
+
+.reservation-box-item td{
+    border-bottom: 1px solid rgb(58, 58, 58);
+}

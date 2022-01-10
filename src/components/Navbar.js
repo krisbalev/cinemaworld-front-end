@@ -7,14 +7,21 @@ const Navbar = props => {
         <nav>
             <div className="links">
                 <li><a href="/#movies">MOVIES</a></li>
+                <li><Link to="">CINEMAS</Link></li>
                 {localStorage.getItem('accessToken') ?
-                    <li><Link to="/">RESERVE</Link></li>
+                    <li><Link to="/reserve">RESERVE</Link></li>
                     :
                     <div></div>
                 }
             </div>
             <div class="logo"><a href="/#home">CinemaWorld</a></div>
             <div class="links">
+                {localStorage.getItem('accessToken') ? 
+                <li><Link to="/notifications">CHAT</Link></li>
+                :
+                <div></div>
+            }
+                
                 <div className="profile-button">
                     {localStorage.getItem('accessToken') ?
                         <li><Link to="/profile" onClick={Profile}>PROFILE</Link></li>
@@ -22,6 +29,7 @@ const Navbar = props => {
                         <div></div>
                     }
                 </div>
+
                 <div class="log-button">
                     {localStorage.getItem('accessToken') ?
                         <li><Link to="/login" onClick={props.logout}>LOGOUT</Link></li>
