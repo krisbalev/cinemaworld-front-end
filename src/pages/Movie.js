@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useParams } from 'react-router';
 import MovieData from '../components/MovieData';
 import CinemaRow from '../components/CinemaRow';
+import { Link } from "react-router-dom";
 
 function Movie() {
     const [movie, setMovie] = useState({});
@@ -24,6 +25,13 @@ function Movie() {
         <div className="movie-page">
             <MovieData movie={movie}/>
             <CinemaRow movie={movie}/>
+            {localStorage.getItem('accessToken') ?
+                <div className='home-page-reservation'>
+                    <Link className='reservation-link' to="/reserve">Start your reservation now!</Link>
+                </div>
+                :
+                <div className='home-page-reservation'><p>In order to make a reservation you need to login.</p></div>
+            }
         </div>
     )
 }

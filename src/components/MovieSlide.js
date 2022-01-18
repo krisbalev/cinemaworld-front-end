@@ -14,7 +14,6 @@ const MovieSlide = props => {
             .then(res => {
                 setMoviePicturePath(URL.createObjectURL(res.data))
             })
-
     })
 
     return (

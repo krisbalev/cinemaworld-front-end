@@ -2,6 +2,7 @@ import './Reservation.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import authHeader from '../authHeader';
+import { createBrowserHistory } from "history";
 
 const ReservationPage = () => {
     const [movies, setMovies] = useState(null);
@@ -11,6 +12,12 @@ const ReservationPage = () => {
     const [numberOfTickets, setNumberOfTickets] = useState(0);
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
+    const [isSelectedMorning, setSelectMorning] = useState(false);
+    const [isSelectedEvening, setSelectEvening] = useState(false);
+    const [isSelectedNight, setSelectNight] = useState(false);
+   
+    const history = createBrowserHistory();
+
 
     useEffect(() => {
         const getMovies = () => {
@@ -59,11 +66,7 @@ const ReservationPage = () => {
                 }
             })
     }
-
-    // const test = (test) => {
-    //     console.log(test);
-    // }
-
+   
     const handleMovieChange = (e) => {
         e.preventDefault();
 
@@ -80,7 +83,23 @@ const ReservationPage = () => {
         e.preventDefault();
 
         setTime(e.target.value);
-        console.log(e.target.value);
+        switch(e.target.value){
+            case "10:00:00":
+                setSelectMorning(true);
+                setSelectEvening(false);
+                setSelectNight(false);
+                break;
+            case "15:00:00":
+                setSelectMorning(false);
+                setSelectEvening(true);
+                setSelectNight(false);
+                break;
+            case "21:30:00":
+                setSelectMorning(false);
+                setSelectEvening(false);
+                setSelectNight(true);
+                break;
+        }
     }
 
     const handleNumberOfTicketsChange = (e) => {
@@ -99,7 +118,18 @@ const ReservationPage = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
-        reserve(selectedMovie, date, time, numberOfTickets, selectedTheatre);
+        if (selectedMovie !== "" && selectedTheatre !== "" && date !== "" && time !== "" && numberOfTickets !== 0) {
+            if(window.confirm(`Make a reservation for ${selectedMovie} at ${selectedTheatre} for ${time} on ${date} with ${numberOfTickets} tickets ?`)) {
+                reserve(selectedMovie, date, time, numberOfTickets, selectedTheatre);
+                history.push("/");
+                window.location.reload();
+                window.alert("Reservation successful!")
+            }
+        } else {
+            window.alert("Please fill in all the required fields.")
+        } 
+        
+       
     }
 
     return (
@@ -133,14 +163,13 @@ const ReservationPage = () => {
 
                 <div className='hour-choice-container'>
                     <h2>Choose a time slot</h2>
-                    <input className='hour-choice' value="12:00:00" onClick={handleHourChange} />
-                    <input className='hour-choice' value="15:30:00" onClick={handleHourChange} />
-                    <input className='hour-choice' value="19:00:00" onClick={handleHourChange} />
-                    <input className='hour-choice' value="21:30:00" onClick={handleHourChange} />
+                    <input className={isSelectedMorning === true ? 'hour-choice selected' : 'hour-choice'} value="10:00:00" onClick={handleHourChange} />
+                    <input className={isSelectedEvening === true ? 'hour-choice selected' : 'hour-choice'} value="15:00:00" onClick={handleHourChange} />
+                    <input className={isSelectedNight === true ? 'hour-choice selected' : 'hour-choice'} value="21:30:00" onClick={handleHourChange} />
                 </div>
 
                 <div className="reservation-tickets">
-                    <input placeholder='Enter the number of tickets you want to reserve' className='reservation-select' type="number" onChange={handleNumberOfTicketsChange} />
+                    <input placeholder='Enter the number of tickets you want to reserve' min="1" className='reservation-select' type="number" onChange={handleNumberOfTicketsChange} />
                 </div>
 
                 <input className='btn reservation-btn' type="submit" value="Finish reservation" id="btn-reservtion-submit" />

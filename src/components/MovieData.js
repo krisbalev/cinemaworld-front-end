@@ -5,6 +5,15 @@ import authHeader from "../authHeader";
 const MovieData = ({ movie }) => {
     const [moviePicturePath, setMoviePicturePath] = useState();
     const [moviePosterPath, setMoviePosterPath] = useState();
+    const [trailer, setTrailer] = useState("");
+
+    const getTrailer = () => {
+        axios
+            .get(`http://localhost:8080/movies/trailer/${movie.id}`)
+            .then(res => {
+                setTrailer(res.data);
+            })
+    }
 
     useEffect(() => {
         axios
@@ -13,6 +22,7 @@ const MovieData = ({ movie }) => {
                 setMoviePicturePath(URL.createObjectURL(res.data))
             })
 
+        
     })
 
     useEffect(() => {
@@ -25,6 +35,10 @@ const MovieData = ({ movie }) => {
 
     })
 
+    useEffect(() => {
+        getTrailer();
+    })
+
     return (
         <div className="movie-page-container">
             <img src={moviePicturePath} className="movie-page-background-image" />
@@ -34,7 +48,7 @@ const MovieData = ({ movie }) => {
                     <h1>{movie.title}</h1>
                     <h3>Release date: {movie.releaseDate}</h3>
                     <p>{movie.description}</p>
-                    <button className="trailer-button"><a href={movie.trailerLink}>Watch trailer</a></button>
+                    <button className="trailer-button"><a href={trailer}>Watch trailer</a></button>
                 </div>
             </div>
         </div>

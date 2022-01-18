@@ -80,3 +80,8 @@
 .btn-reg p{
     text-align: center;
 } 
+
+.error-msg{
+    color: red;
+
+}

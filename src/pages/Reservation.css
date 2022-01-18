@@ -49,14 +49,16 @@
 }
 
 .hour-choice-container{
-    margin-left: 31%;
-}
-
-.hour-choice-container h2{
-    margin-left: 3%;
+   width: 100%;
+   margin: 0 30%;
 }
 
 .reservation-btn{
     width: 33%;
     margin-left: 34%;
+}
+
+.selected{
+    background-color: red;
+    border: 1px solid white;
 }

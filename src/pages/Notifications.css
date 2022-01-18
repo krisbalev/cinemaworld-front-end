@@ -1,0 +1,86 @@
+.chat-scroll{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.chat-box{
+    background-color: rgb(55, 55, 55);
+    height: 60vh;
+    padding: 1%;
+    width: 80%;
+    margin: 0 10%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.chat-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.chat-welcome{
+    color: gray;
+}
+
+.chat-room-container h1{
+    text-align: center;
+    color: red;
+}
+
+::-webkit-scrollbar{
+    background-color: transparent;
+    border: none;
+    width: 5px;
+    transition: 2s;
+}
+
+::-webkit-scrollbar:hover{
+    background-color: rgb(40, 40, 40);;
+    transition: 2s;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: red;
+    border-radius: 10px;
+}
+
+.chat-input{
+    border-top: 2px solid rgb(40, 40, 40);;
+    background-color: rgb(55, 55, 55);
+    width: 82%;
+    margin: 0 10%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 30px;
+}
+
+.chat-input input{
+    border: none;
+    width: 80%;
+    height: 20px;
+    background-color: transparent;
+    color: white;
+    margin-left: 1%;
+    margin-top: 3px;
+}
+
+.chat-input button{
+    width: 18%;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    border-left: 1px solid rgb(40, 40, 40);
+    color: white;
+    transition: 0.5s;
+}
+
+.chat-input button:hover{
+    color: red;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.chat-box input:focus{
+    outline: none;
+}

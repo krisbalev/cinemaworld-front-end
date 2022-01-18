@@ -47,3 +47,8 @@
     padding: 2% 5%;
     font-size: 16px;
 }
+
+.trailer-button a{
+    color: white;
+    text-decoration: none;
+}

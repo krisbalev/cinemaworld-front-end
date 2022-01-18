@@ -11,11 +11,27 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import ReservationPage from './pages/ReservationPage';
 import Notifications from './pages/Notifications';
+import authHeader from './authHeader';
+import AdminPage from './pages/AdminPage';
 
 function App() {
-  
+  const [user, setUser] = useState({});
   const history = createBrowserHistory();
 
+  useEffect(() => {
+    if (localStorage.getItem("accessToken")) {
+      axios
+        .get("http://localhost:8080/user/account", { headers: authHeader(), })
+        .then((res) => {
+          if (res.data.error) {
+            console.log(res.data);
+            alert("Something went wrong");
+          } else {
+            setUser(res.data);
+          }
+        });
+    }
+  })
 
   const register = (username, password, email, firstName, lastName) => {
     axios
@@ -60,17 +76,25 @@ function App() {
           <Route exact path='/' exact component={Home} />
           <Route exact path='/movies/:id' exact component={Movie} />
           {
-            localStorage.getItem('accessToken') ?
+            localStorage.getItem('accessToken') && user.role === "USER" ?
               <>
                 <Route exact path='/profile' exact component={Profile} />
-                <Route exact path='/reserve' exact component={ReservationPage}/>
-                <Route exact path='/notifications' exact component={Notifications}/>
+                <Route exact path='/reserve' exact component={ReservationPage} />
+                <Route exact path='/discussion' exact component={Notifications} />
+
               </>
-              :
-              <>
-                <Route path="/register"> <Register register={register} /> </Route>
-                <Route path="/login"> <Login /> </Route>
-              </>
+              : localStorage.getItem('accessToken') && user.role === "ADMIN" ?
+                <>
+                  <Route exact path='/profile' exact component={Profile} />
+                  <Route exact path='/reserve' exact component={ReservationPage} />
+                  <Route exact path='/discussion' exact component={Notifications} />
+                  <Route exact path='/admin-settings' exact component={AdminPage} />
+                </>
+                :
+                <>
+                  <Route path="/register"> <Register register={register} /> </Route>
+                  <Route path="/login"> <Login /> </Route>
+                </>
           }
         </Switch>
       </Router>

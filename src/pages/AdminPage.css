@@ -1,0 +1,13 @@
+.admin-choice-container{
+    border-bottom: 1px solid gray;
+    margin: 0 5%;
+}
+
+.admin-texbox p{
+    text-align: center;
+}
+
+.admin-page h1{
+    text-align: center;
+    color: red;
+}

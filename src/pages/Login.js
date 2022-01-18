@@ -19,8 +19,7 @@ const Login = () => {
             .then((res) => {
                 if (res.data.error) {
                     console.log(res.data);
-                    alert("Invalid credentials");
-                    setLoginErrorMessage("Invalid credentials"); //HAS TO CHANGE
+                    
                 } else {
                     console.log(res.data);
     
@@ -29,7 +28,13 @@ const Login = () => {
                     history.push("/")
                     window.location.reload();
                 }
-            });
+            })
+            .catch((error) => {
+                if(error){
+                    setLoginErrorMessage("Invalid credentials"); 
+                    return;
+                }
+            })
     
     };
 
@@ -77,7 +82,7 @@ const Login = () => {
         <div>
             <form method="post" id="login-form" onSubmit={handleFormSubmit}>
                 <div class="login-container">
-                    <p>{loginErrorMessage}</p>
+                    <p className="error-msg">{loginErrorMessage}</p>
                     <h1>Login</h1>
                     <div class="textbox">
                         <input type="text" placeholder="Username" id="username" name="username" onChange={handleUsernameChange} /><br />

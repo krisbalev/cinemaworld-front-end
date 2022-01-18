@@ -11,10 +11,23 @@
 .reservation-container{
     width: 120vh;
     padding: 40px;
-    margin-top: 10px;
     height: 70vh;
 }
 
 .reservation-box-item td{
     border-bottom: 1px solid rgb(58, 58, 58);
+}
+
+.reservation-container a{
+    text-decoration: none;
+    color: red;
+}
+
+.reservation-container a:hover{
+    text-decoration: underline;
+}
+
+.reservation-box{
+    height: 55vh;
+    overflow-y: scroll;
 }

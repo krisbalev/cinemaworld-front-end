@@ -22,3 +22,34 @@
 .movie-row-header h1{
     text-align: center;
 }
+
+.home-page-reservation{
+    width: 80%;
+    margin: 0 10%;
+    text-align: center;
+}
+
+.reservation-link{
+    text-decoration: none;
+    color: red;
+    font-size: 25px;
+}
+
+.home-page-reservation p{
+    text-decoration: none;
+    color: red;
+    font-size: 25px;
+}
+
+.reservation-link:hover{
+    text-decoration: underline;
+}
+
+.admin-edit-link a{
+    text-decoration: none;
+    color: green;
+}
+
+.admin-edit-link a:hover{
+    text-decoration: underline;
+}

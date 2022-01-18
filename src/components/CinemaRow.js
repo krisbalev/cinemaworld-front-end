@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
+import './CinemaRow.css'
 
 
 const CinemaRow = ({ movie }) => {
@@ -23,7 +24,7 @@ const CinemaRow = ({ movie }) => {
             {cinemas && (
                 <div className="cinema-row">
                     {cinemas.map((cinema) => {
-                        return <h1>{cinema.name}</h1>
+                        return <div className="cinema"><h1>{cinema.name}</h1><p>{cinema.address}</p></div>
                     })}
                 </div>
             )}

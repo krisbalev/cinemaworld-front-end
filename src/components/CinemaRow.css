@@ -1,0 +1,12 @@
+.cinema-row{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;    
+    flex-direction: row;
+}
+
+.cinema{
+    /* padding: 0 1%;
+    margin: 0 8%; */
+    width: 33%;
+}

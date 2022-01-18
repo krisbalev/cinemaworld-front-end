@@ -7,6 +7,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import profileIcon from '../images/profile-icon.png'
 import emailIcon from '../images/email-icon.png'
+import api from "../App.js"
 
 function ProfileData() {
   const [user, setUser] = useState({});
