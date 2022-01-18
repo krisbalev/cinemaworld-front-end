@@ -23,4 +23,5 @@ deploy:
     stage: deploy
     script:
         - docker-compose -f docker-compose.prod.yml build
+	- docker run -p 80:80 app-prod
         - echo "Build successful."
