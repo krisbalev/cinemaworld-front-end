@@ -34,13 +34,15 @@ function App() {
   })
 
   const register = (username, password, email, firstName, lastName) => {
+    let role = "USER"
     axios
       .post("http://localhost:8080/user/register", {
         username,
         email,
         password,
         firstName,
-        lastName
+        lastName,
+        role
       })
       .then((res) => {
         if (res.data.error) {

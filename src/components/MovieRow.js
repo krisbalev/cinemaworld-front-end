@@ -44,7 +44,7 @@ function MovieRow() {
         <div className="movie-row" id="movies">
             {localStorage.getItem('accessToken') ?
                 <div className='home-page-reservation'>
-                    {user.role === "ADMIN" ? <div className='admin-edit-link'><a href='/admin-settings'>CRUD MOVIES AND THEATRES.</a></div> : <></>}
+                    {user.role === "ADMIN" ? <div className='admin-edit-link'><a href='/admin-settings'>ADD MOVIES AND THEATRES.</a></div> : <></>}
                     <Link className='reservation-link' to="/reserve">Start your reservation now!</Link>
                 </div>
                 :

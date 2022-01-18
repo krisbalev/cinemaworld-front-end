@@ -20,7 +20,7 @@ const AdminPage = () => {
     const [addMovieTitle, setTitle] = useState("");
     const [addMovieDescription, setDescription] = useState("");
     const [addMovieTrailer, setTrailer] = useState("");
-    const [addCinemaName , setCinemaName] = useState("");
+    const [addCinemaName, setCinemaName] = useState("");
     const [addCinemaAddress, setCinemaAddress] = useState("");
     const history = createBrowserHistory();
 
@@ -53,6 +53,7 @@ const AdminPage = () => {
         getMovies();
         getTheatres();
     }, []);
+    
 
     const handleMovieChange = (e) => {
         e.preventDefault();
@@ -164,15 +165,15 @@ const AdminPage = () => {
 
     const addCinema = (name, address) => {
         axios
-        .post("http://localhost:8080/admin/add/theatre", {
-            name,
-            address
-        }, { headers: authHeader() })
-        .then((res) => {
-            if (res.data.error) {
-                console.log(res.data);
-            }
-        })
+            .post("http://localhost:8080/admin/add/theatre", {
+                name,
+                address
+            }, { headers: authHeader() })
+            .then((res) => {
+                if (res.data.error) {
+                    console.log(res.data);
+                }
+            })
     }
 
     const handleFormSubmit = (e) => {
@@ -187,10 +188,10 @@ const AdminPage = () => {
                     window.location.reload();
                 } else {
                     window.alert("Fill in all fields.")
-                   
+
                 }
-            } else if (selectedCinemas === true){
-                if(addCinemaName !== "" && addCinemaAddress !== "") {
+            } else if (selectedCinemas === true) {
+                if (addCinemaName !== "" && addCinemaAddress !== "") {
                     addCinema(addCinemaName, addCinemaAddress);
                     history.push("/");
                     window.alert(`${addCinemaName} has been added`);
@@ -216,8 +217,8 @@ const AdminPage = () => {
                             <select className='reservation-select' name="admin-action" id="admin-action" onChange={handleActionChange}>
                                 <option className='select-option' disabled value="null" selected="selected">I want to:</option>
                                 <option className='select-option' value="add">Add</option>
-                                <option className='select-option' value="edit">Edit</option>
-                                <option className='select-option' value="delete">Delete</option>
+                                {/* <option className='select-option' value="edit">Edit</option>
+                                <option className='select-option' value="delete">Delete</option> */}
                             </select>
                             <select className='reservation-select' name="admin-select" id="admin-select" onChange={handleOptionChange}>
                                 <option className='select-option' disabled value="null" selected="selected">I want to make changes to:</option>
@@ -228,7 +229,7 @@ const AdminPage = () => {
                     </div>
 
                     <div className='admin-page-body'>
-                        {toDelete === true ?
+                        {/* {toDelete === true ?
                             <div className="admin-choice-contaier">
                                 {selectedMovies === true ?
                                     <div className="reservation-movie-choice">
@@ -256,39 +257,39 @@ const AdminPage = () => {
                                         <></>
                                 }
                             </div>
-                            : toAdd === true ?
-                                <div className='admin-add'>
-                                    {selectedMovies === true ?
-                                        <div className='admin-add-movie'>
-                                            <div class="admin-texbox">
-                                                <input type="text" className="reservation-select" placeholder="Movie title" id="movie-title" name="movie-title" onChange={handleAddMovieTitle} /><br />
-                                            </div>
-                                            <div class="admin-texbox">
-                                                <p>Release Date:</p>
-                                                <input className='calendar' type="date" onChange={handleAddMovieDate} /><br />
-                                            </div>
-                                            <div class="admin-texbox">
-                                                <input type="text" className="reservation-select" placeholder="Description" id="movie-description" name="movie-description" onChange={handleAddMovieDescription} /><br />
-                                            </div>
-                                            <div class="admin-texbox">
-                                                <input type="text" className="reservation-select" placeholder="Trailer URL" id="movie-trailer" name="movie-trailer" onChange={handleAddMovieTrailer} /><br />
-                                            </div>
-                                        </div>
-                                        : selectedCinemas === true ?
-                                            <div className='admin-add-cinema'>
-                                                <div class="admin-texbox">
-                                                    <input type="text" className="reservation-select" placeholder="Cinema name" id="cinema-name" name="cinema-name" onChange={handleAddCinemaNameChange}/><br />
-                                                </div>
-                                                <div class="admin-texbox">
-                                                    <input type="text" className="reservation-select" placeholder="Cinema address" id="cinema-address" name="cinema-address" onChange={handleAddCinemaAddressChange}/><br />
-                                                </div>
-                                            </div>
-                                            :
-                                            <></>
-
-                                    }
+                            : toAdd === true ? */}
+                        <div className='admin-add'>
+                            {selectedMovies === true ?
+                                <div className='admin-add-movie'>
+                                    <div class="admin-texbox">
+                                        <input type="text" className="reservation-select" placeholder="Movie title" id="movie-title" name="movie-title" onChange={handleAddMovieTitle} /><br />
+                                    </div>
+                                    <div class="admin-texbox">
+                                        <p>Release Date:</p>
+                                        <input className='calendar' type="date" onChange={handleAddMovieDate} /><br />
+                                    </div>
+                                    <div class="admin-texbox">
+                                        <input type="text" className="reservation-select" placeholder="Description" id="movie-description" name="movie-description" onChange={handleAddMovieDescription} /><br />
+                                    </div>
+                                    <div class="admin-texbox">
+                                        <input type="text" className="reservation-select" placeholder="Trailer URL" id="movie-trailer" name="movie-trailer" onChange={handleAddMovieTrailer} /><br />
+                                    </div>
                                 </div>
-                                : toEdit === true ?
+                                : selectedCinemas === true ?
+                                    <div className='admin-add-cinema'>
+                                        <div class="admin-texbox">
+                                            <input type="text" className="reservation-select" placeholder="Cinema name" id="cinema-name" name="cinema-name" onChange={handleAddCinemaNameChange} /><br />
+                                        </div>
+                                        <div class="admin-texbox">
+                                            <input type="text" className="reservation-select" placeholder="Cinema address" id="cinema-address" name="cinema-address" onChange={handleAddCinemaAddressChange} /><br />
+                                        </div>
+                                    </div>
+                                    :
+                                    <></>
+
+                            }
+                        </div>
+                        {/* : toEdit === true ?
                                     <div className="admin-choice-contaier">
                                         {selectedMovies === true ?
                                             <div className='edit-container'>
@@ -343,8 +344,8 @@ const AdminPage = () => {
                                         }
                                     </div>
                                     :
-                                    <></>
-                        }
+                                    <></> */}
+
 
                     </div>
                     <input className='btn reservation-btn' type='submit' value="Finish changes" id="btn-admin-submit" />
